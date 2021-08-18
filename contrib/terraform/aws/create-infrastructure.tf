@@ -1,5 +1,11 @@
 terraform {
   required_version = ">= 0.12.0"
+  backend "s3" {
+    bucket         = "terraform-state-storage-766050608330"
+    dynamodb_table = "terraform-state-lock-766050608330"
+    key            = "kubespray.tfstate"
+    region         = "us-east-1"
+  }
 }
 
 provider "aws" {
