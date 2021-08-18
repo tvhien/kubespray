@@ -36,8 +36,8 @@ aws_elb_api_port    = 6443
 k8s_secure_api_port = 6443
 
 default_tags = {
-  #  Env = "devtest"
-  #  Product = "kubernetes"
+  Env     = "devtest"
+  Product = "kubernetes"
 }
 
 inventory_file = "../../../inventory/hosts"

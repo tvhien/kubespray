@@ -10,7 +10,7 @@ resource "aws_security_group" "aws-elb" {
 resource "aws_security_group_rule" "aws-allow-api-access" {
   type              = "ingress"
   from_port         = var.aws_elb_api_port
-  to_port           = var.k8s_secure_api_port
+  to_port           = var.aws_elb_api_port # Avoid misunderstanding
   protocol          = "TCP"
   cidr_blocks       = ["0.0.0.0/0"]
   security_group_id = aws_security_group.aws-elb.id

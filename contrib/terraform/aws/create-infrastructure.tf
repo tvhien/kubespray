@@ -1,8 +1,8 @@
 terraform {
   required_version = ">= 0.12.0"
   backend "s3" {
-    bucket         = "terraform-state-storage-766050608330"
-    dynamodb_table = "terraform-state-lock-766050608330"
+    bucket         = "terraform-state-storage-881299606849"
+    dynamodb_table = "terraform-state-lock-881299606849"
     key            = "kubespray.tfstate"
     region         = "us-east-1"
   }
@@ -64,8 +64,7 @@ resource "aws_instance" "bastion-server" {
   subnet_id                   = element(module.aws-vpc.aws_subnet_ids_public, count.index)
 
   vpc_security_group_ids = module.aws-vpc.aws_security_group
-
-  key_name = var.AWS_SSH_KEY_NAME
+  key_name               = var.AWS_SSH_KEY_NAME
 
   tags = merge(var.default_tags, tomap({
     Name    = "kubernetes-${var.aws_cluster_name}-bastion-${count.index}"
