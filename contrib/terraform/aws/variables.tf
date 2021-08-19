@@ -26,7 +26,7 @@ data "aws_ami" "distro" {
   filter {
     name = "name"
     # values = ["debian-10-amd64-*"]
-    values = ["ubuntu/images/hvm-instance/ubuntu-bionic-18.04-amd64-server-*"]
+    values = ["ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"]
   }
 
   filter {

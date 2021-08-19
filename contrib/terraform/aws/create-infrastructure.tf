@@ -1,8 +1,8 @@
 terraform {
   required_version = ">= 0.12.0"
   backend "s3" {
-    bucket         = "terraform-state-storage-881299606849"
-    dynamodb_table = "terraform-state-lock-881299606849"
+    bucket         = "terraform-state-storage-443374801248"
+    dynamodb_table = "terraform-state-lock-443374801248"
     key            = "kubespray.tfstate"
     region         = "us-east-1"
   }
